@@ -6,6 +6,16 @@
 
 @section("body")
   <h2> Estoy en el body </h2>
+  @if(count($persons))
+    <div class ="table">
+
+      @foreach($persons as $per)
+        <div>
+          {{$per}}
+        </div>
+      @endforeach
+    </div>
+  @endif
 @endsection
 
 @section("footer")
