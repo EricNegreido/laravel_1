@@ -36,10 +36,15 @@ Route::get('/home', [homeController::class,'home']);
 // });
 
 //ELOQUENT
-
+//ALL
+// Route::get('/read', function(){
+//     $persons = Persons::all();
+//     foreach ($persons as $person) {
+//     echo''. $person->id .' '. $person->name . ' ' .$person->last_name;
+//     }
+// });
 Route::get('/read', function(){
-    $persons = Persons::all();
-    foreach ($persons as $person) {
-    echo''. $person->id .' '. $person->name . ' ' .$person->last_name;
-    }
+    $persons = Persons::where("genero", "F")->get();
+    return $persons;
 });
+
