@@ -5,6 +5,7 @@ use App\Http\Controllers\EjemploController;
 use App\Http\Controllers\homeController;
 // use Illuminate\Support\Facades\DB;
 use App\Models\Persons;
+use App\Models\Profession;
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,5 +68,9 @@ Route::get('/update', function(){
     $persons->genero = "M";
 
     $persons->save();
+});
+
+Route::get("/person/{id}/profession", function($id){
+    return Profession::find($id)->persons;
 });
 
