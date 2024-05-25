@@ -71,6 +71,24 @@ Route::get('/update', function(){
 });
 
 Route::get("/person/{id}/profession", function($id){
-    return Profession::find($id)->persons;
+    return Profession::find($id)->person;
 });
+
+Route::get("/persons/{id}/profession", function($id){
+    $persons = Profession::find($id)->persons;
+
+    foreach ($persons as $person) {
+        echo $person->name . "<br/>";
+    }
+});
+
+Route::get("/persons/{id}/perfil", function($id){
+    $persons = Persons::find($id);
+
+    foreach ($persons->perfils as $perfil) {
+        return $perfil->name;
+    }
+});
+
+
 

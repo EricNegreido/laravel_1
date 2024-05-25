@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Persons extends Model
+class perfil extends Model
 {
     use HasFactory;
-    public function perfils(){
-        return $this->belongsToMany("App\Models\perfil");
-    }
 }
