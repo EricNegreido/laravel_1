@@ -47,4 +47,25 @@ Route::get('/read', function(){
     $persons = Persons::where("genero", "F")->get();
     return $persons;
 });
+Route::get('/add', function(){
+    $persons = new Persons();
+    $persons->name = "Jorge";
+    $persons->last_name = "Milton";
+    $persons->age = "50";
+    $persons->direccion = "Jo 22";
+    $persons->genero = "M";
+
+    $persons->save();
+});
+
+Route::get('/update', function(){
+    $persons = Persons::find(4);
+    $persons->name = "Tom";
+    $persons->last_name = "Brondon";
+    $persons->age = "50";
+    $persons->direccion = "Jo 22";
+    $persons->genero = "M";
+
+    $persons->save();
+});
 
